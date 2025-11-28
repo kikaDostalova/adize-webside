@@ -1,0 +1,407 @@
+/* -------------------- GLOBAL STYLE -------------------- */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #ffffff;
+    color: #111111;
+    line-height: 1.6;
+}
+
+section {
+    margin-bottom: 70px;
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* -------------------- HEADER -------------------- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    height: 55px;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.03);
+}
+
+.header nav a {
+    margin-left: 32px;
+    text-decoration: none;
+    color: #111111;
+    font-weight: 600;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.header nav a:hover,
+.header nav a.active {
+    color: #E00000;
+}
+
+/* -------------------- HERO SECTION -------------------- */
+.hero {
+    height: 100vh;
+    background: url('images/hero.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 60px;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.22);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 600px;
+    color: white;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 15px;
+    font-weight: 800;
+    color: #fdfdfd;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #e8e8e8;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 15px 34px;
+    background: #E00000;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #b70000;
+    transform: translateY(-3px);
+}
+
+/* -------------------- PAGE HEADERS -------------------- */
+.page-header h1 {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 19px;
+    color: #444;
+}
+
+/* -------------------- SERVICES DETAIL -------------------- */
+.services-detail h2 {
+    color: #E00000;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+}
+
+.service-list li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* -------------------- GALLERY -------------------- */
+.gallery-section h2 {
+    color: #E00000;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* MASONRY GALLERY */
+.masonry {
+    column-count: 3;
+    column-gap: 20px;
+    padding-top: 20px;
+}
+
+.masonry img {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    display: block;
+    break-inside: avoid;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform .3s ease, box-shadow .3s ease;
+    cursor: pointer;
+}
+
+.masonry img:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* MODERN FULL-TEXT SECTION */
+.premium-services {
+    margin-top: 60px;
+    padding: 20px;
+    background: #ffffff;
+}
+
+.premium-services h2 {
+    color: #E00000;
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 40px;
+}
+
+.premium-services h3 {
+    font-size: 22px;
+    margin-top: 25px;
+    font-weight: 700;
+}
+
+.premium-services .lead-text {
+    font-size: 18px;
+    max-width: 950px;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+.premium-services p {
+    max-width: 900px;
+    color: #333;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.premium-services ul {
+    max-width: 900px;
+    padding-left: 20px;
+}
+
+.premium-services ul li {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+/* --- More button --- */
+.more-btn {
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+/* --- Hidden long version --- */
+.details-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all .5s ease;
+    margin-top: 0;
+}
+
+.details-content.open {
+    max-height: 2000px; /* dostatočne veľké */
+    opacity: 1;
+    margin-top: 30px;
+}
+
+/* DVA MODERNÉ BOXY */
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.column-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    background: #fff;
+}
+
+.box-content h2 {
+    color: #E00000;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.box-content p {
+    font-size: 17px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Skrytá dlhá verzia */
+.details-box {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+.details-box.open {
+    max-height: 1200px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+.details-box ul {
+    margin: 10px 0 0 15px;
+    padding: 0;
+}
+
+.details-box ul li {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .column-box {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* BOX LAYOUT */
+.column-box {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+}
+
+.box-content {
+    width: 55%;
+}
+
+.box-photo {
+    width: 45%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Rozbalený obsah cez celú šírku */
+.details-box {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all .45s ease;
+    padding: 0 5px;
+    margin-top: 10px;
+}
+
+.details-box.open {
+    max-height: 2000px;
+    opacity: 1;
+    margin-top: 25px;
+}
+
+/* Celá šírka po otvorení */
+.full-width-details {
+    width: 100%;
+    grid-column: 1 / -1;
+    overflow: hidden;
+}
+
+.full-details-box {
+    width: 100%;
+    background: #ffffff;
+    padding: 35px;
+    margin-top: 1px;
+
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+    max-height: 0;
+    opacity: 0;
+    transition: all .45s ease;
+}
+
+.full-details-box.open {
+    max-height: 2000px;
+    opacity: 1;
+    width: 100%;
+}
+
+.full-width-details {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.higher-box {
+    position: relative;
+    z-index: 0;
+    top: -200px;
+}
+
+.botton-box {
+    top: -200px;
+}
+
+.higher_2-box {
+    position: relative;
+    z-index: 0;
+    top: -300px;
+}
