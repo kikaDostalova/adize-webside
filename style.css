@@ -1,9 +1,40 @@
-/* -------------------- GLOBAL STYLE -------------------- */
+/* =========================================================
+   MODERN FONT SET
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap');
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+:root {
+    --bg: #f2f2f2;
+    --text: #111111;
+    --muted: #444444;
+    --card: #ffffff;
+    --accent: #E00000;
+    --accent-dark: #b70000;
+
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.10);
+    --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+
+    --container: 1200px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #ffffff;
-    color: #111111;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
     line-height: 1.6;
 }
 
@@ -12,19 +43,21 @@ section {
 }
 
 .page-container {
-    max-width: 1200px;
+    max-width: var(--container);
     margin: 0 auto;
     padding: 40px 20px;
 }
 
-/* -------------------- HEADER -------------------- */
+/* =========================================================
+   HEADER
+   ========================================================= */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
-    background: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: var(--card);
+    box-shadow: var(--shadow-sm);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -42,18 +75,20 @@ section {
 .header nav a {
     margin-left: 32px;
     text-decoration: none;
-    color: #111111;
+    color: var(--text);
     font-weight: 600;
-    transition: 0.3s;
     font-size: 16px;
+    transition: 0.3s;
 }
 
 .header nav a:hover,
 .header nav a.active {
-    color: #E00000;
+    color: var(--accent);
 }
 
-/* -------------------- HERO SECTION -------------------- */
+/* =========================================================
+   HERO
+   ========================================================= */
 .hero {
     height: 100vh;
     background: url('images/hero.png') center/cover no-repeat;
@@ -67,10 +102,7 @@ section {
 .hero::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: rgba(0, 0, 0, 0.22);
     z-index: 1;
 }
@@ -78,61 +110,71 @@ section {
 .hero-content {
     position: relative;
     max-width: 600px;
-    color: white;
+    color: #ffffff;
     z-index: 2;
 }
 
 .hero h1 {
     font-size: 52px;
-    margin-bottom: 15px;
+    margin: 0 0 15px 0;
     font-weight: 800;
     color: #fdfdfd;
 }
 
 .hero p {
     font-size: 20px;
-    margin-bottom: 30px;
+    margin: 0 0 30px 0;
     color: #e8e8e8;
 }
 
+/* =========================================================
+   BUTTONS
+   ========================================================= */
 .btn-primary {
     display: inline-block;
     padding: 15px 34px;
-    background: #E00000;
-    color: white;
-    font-weight: bold;
-    border-radius: 8px;
+    background: var(--accent);
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: var(--radius-sm);
     text-decoration: none;
     transition: 0.3s;
 }
 
 .btn-primary:hover {
-    background: #b70000;
+    background: var(--accent-dark);
     transform: translateY(-3px);
 }
 
-/* -------------------- PAGE HEADERS -------------------- */
-.page-header h1 {
-    font-size: 40px;
+/* =========================================================
+   PAGE HEADERS
+   ========================================================= */
+.page-header h2 {
+    font-size: 28px;
     font-weight: 800;
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
+    color: var(--accent);
 }
 
 .page-header p {
     font-size: 19px;
-    color: #444;
+    color: var(--muted);
+    margin: 0;
 }
 
-/* -------------------- SERVICES DETAIL -------------------- */
+/* =========================================================
+   SERVICES DETAIL
+   ========================================================= */
 .services-detail h2 {
-    color: #E00000;
+    color: var(--accent);
     font-size: 28px;
-    margin-bottom: 20px;
+    margin: 0 0 20px 0;
 }
 
 .service-list {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .service-list li {
@@ -140,10 +182,18 @@ section {
     margin: 10px 0;
 }
 
-/* -------------------- GALLERY -------------------- */
+/* =========================================================
+   GALLERY
+   ========================================================= */
+.gallery-section {
+    margin-top: 100px;
+    background: var(--bg);
+    padding: 40px 0;
+}
+
 .gallery-section h2 {
-    color: #E00000;
-    margin-bottom: 20px;
+    color: var(--accent);
+    margin: 0 0 20px 0;
     font-size: 30px;
     font-weight: 700;
 }
@@ -159,8 +209,8 @@ section {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    border-radius: 14px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
     transition: transform .3s ease, box-shadow .3s ease;
 }
 
@@ -169,7 +219,9 @@ section {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
-/* MASONRY GALLERY */
+/* =========================================================
+   MASONRY
+   ========================================================= */
 .masonry {
     column-count: 3;
     column-gap: 20px;
@@ -182,7 +234,7 @@ section {
     border-radius: 12px;
     display: block;
     break-inside: avoid;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-md);
     transition: transform .3s ease, box-shadow .3s ease;
     cursor: pointer;
 }
@@ -192,43 +244,48 @@ section {
     box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
 }
 
-/* MODERN FULL-TEXT SECTION */
+/* =========================================================
+   PREMIUM / LONG TEXT SECTION
+   ========================================================= */
 .premium-services {
-    margin-top: 60px;
+    margin-top: -30px;
     padding: 20px;
-    background: #ffffff;
+    background: var(--bg);
 }
 
 .premium-services h2 {
-    color: #E00000;
+    color: var(--accent);
     font-size: 30px;
     font-weight: 800;
-    margin-top: 40px;
+    margin: 40px 0 0 0;
 }
 
 .premium-services h3 {
     font-size: 22px;
-    margin-top: 25px;
+    margin: 25px 0 0 0;
     font-weight: 700;
 }
 
 .premium-services .lead-text {
+    text-align: justify;
+    text-justify: inter-word;
     font-size: 18px;
-    max-width: 950px;
-    color: #444;
-    margin-bottom: 25px;
+    max-width: 1200px;
+    color: var(--muted);
+    margin: 0 0 25px 0;
 }
 
 .premium-services p {
     max-width: 900px;
     color: #333;
     font-size: 17px;
-    margin-bottom: 15px;
+    margin: 0 0 15px 0;
 }
 
 .premium-services ul {
     max-width: 900px;
     padding-left: 20px;
+    margin: 0;
 }
 
 .premium-services ul li {
@@ -236,13 +293,13 @@ section {
     font-size: 16px;
 }
 
-/* --- More button --- */
+/* more button */
 .more-btn {
     margin-top: 25px;
     cursor: pointer;
 }
 
-/* --- Hidden long version --- */
+/* hidden long version */
 .details-content {
     max-height: 0;
     overflow: hidden;
@@ -252,12 +309,24 @@ section {
 }
 
 .details-content.open {
-    max-height: 2000px; /* dostatočne veľké */
+    max-height: 2000px;
     opacity: 1;
     margin-top: 30px;
 }
 
-/* DVA MODERNÉ BOXY */
+/* detail: allow full width inside premium */
+.premium-services .details-box,
+.premium-services .details-box ul,
+.premium-services .details-box p {
+    max-width: none;
+    width: 98%;
+}
+
+/* =========================================================
+   TWO COLUMNS / BOXES (FINAL SINGLE SOURCE OF TRUTH)
+   - v tvojom povodnom css bolo .column-box duplicitne (grid aj flex)
+   - tu je final: FLEX + stabilne rozmery pre obe stranky
+   ========================================================= */
 .two-columns {
     display: grid;
     grid-template-columns: 1fr;
@@ -266,71 +335,33 @@ section {
 }
 
 .column-box {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 30px;
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    background: #fff;
-}
-
-.box-content h2 {
-    color: #E00000;
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-.box-content p {
-    font-size: 17px;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-/* Skrytá dlhá verzia */
-.details-box {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: all .5s ease;
-}
-
-.details-box.open {
-    max-height: 1200px;
-    opacity: 1;
-    margin-top: 15px;
-}
-
-.details-box ul {
-    margin: 10px 0 0 15px;
-    padding: 0;
-}
-
-.details-box ul li {
-    margin-bottom: 8px;
-    font-size: 16px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .column-box {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* BOX LAYOUT */
-.column-box {
     display: flex;
     gap: 40px;
     margin-top: 40px;
     align-items: flex-start;
     position: relative;
     z-index: 2;
+
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    background: var(--card);
+    box-shadow: var(--shadow-lg);
 }
 
 .box-content {
     width: 55%;
+}
+
+.box-content h2 {
+    color: var(--accent);
+    font-size: 28px;
+    margin: 0 0 10px 0;
+}
+
+.box-content p {
+    font-size: 17px;
+    color: #555;
+    margin: 0 0 20px 0;
 }
 
 .box-photo {
@@ -341,7 +372,13 @@ section {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Rozbalený obsah cez celú šírku */
+/* special photo sizing you used */
+.box-photo-okna {
+    width: 45%;
+    height: 620px;
+}
+
+/* hidden details (inside box) */
 .details-box {
     max-height: 0;
     overflow: hidden;
@@ -357,25 +394,36 @@ section {
     margin-top: 25px;
 }
 
-/* Celá šírka po otvorení */
+.details-box ul {
+    margin: 10px 0 0 15px;
+    padding: 0;
+}
+
+.details-box ul li {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+/* full width details card */
 .full-width-details {
     width: 100%;
+    margin-top: 30px;
     grid-column: 1 / -1;
     overflow: hidden;
 }
 
 .full-details-box {
     width: 100%;
-    background: #ffffff;
+    background: var(--card);
     padding: 35px;
     margin-top: 1px;
 
-    overflow: hidden;
     border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--shadow-lg);
 
     max-height: 0;
     opacity: 0;
+    overflow: hidden;
     transition: all .45s ease;
 }
 
@@ -385,11 +433,7 @@ section {
     width: 100%;
 }
 
-.full-width-details {
-    width: 100%;
-    margin-top: 30px;
-}
-
+/* positioning helpers (kept as you had) */
 .higher-box {
     position: relative;
     z-index: 0;
@@ -404,4 +448,484 @@ section {
     position: relative;
     z-index: 0;
     top: -300px;
+}
+
+.box-okna {
+    margin-top: -50px;
+    position: relative;
+    z-index: 2;
+    top: 50px;
+}
+
+.box-okna-details {
+    margin-top: -100px;
+    position: relative;
+    z-index: 0;
+    top: -20px;
+}
+
+.box-zaluzie {
+    margin-top: -50px;
+    position: relative;
+    z-index: 2;
+    top: 110px;
+}
+
+.box-zaluzie-details {
+    margin-top: -100px;
+    position: relative;
+    z-index: 0;
+    top: -20px;
+}
+
+/* responsive for boxes */
+@media (max-width: 900px) {
+    .column-box {
+        flex-direction: column;
+    }
+
+    .box-content,
+    .box-photo,
+    .box-photo-okna {
+        width: 100%;
+    }
+
+    .box-photo {
+        height: 260px;
+    }
+
+    .box-photo-okna {
+        height: 320px;
+    }
+
+    .masonry {
+        column-count: 1;
+    }
+}
+
+/* =========================================================
+   CONTACT SECTION
+   ========================================================= */
+.contact-section {
+    max-width: 1120px;
+    margin: 80px auto 0;
+    padding: 35px;
+    border-radius: var(--radius-lg);
+    background: var(--card);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact-section h2 {
+    color: var(--accent);
+    font-size: 30px;
+    font-weight: 800;
+    margin: 0 0 15px 0;
+}
+
+.contact-section p {
+    font-size: 17px;
+    color: var(--muted);
+    margin: 0 0 30px 0;
+}
+
+/* form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 14px 16px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(224, 0, 0, 0.15);
+}
+
+.contact-submit {
+    width: fit-content;
+    padding: 16px 34px;
+    font-size: 17px;
+}
+
+/* =========================================================
+   CONTACT HEADING – telefon vedla nadpisu
+   ========================================================= */
+
+.contact-heading{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.contact-inline{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(224,0,0,0.08);
+}
+
+.contact-inline svg{
+    width: 18px;
+    height: 18px;
+    fill: var(--accent);
+}
+
+.contact-inline a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent);
+    white-space: nowrap;
+}
+
+/* mobil – nech ide pod nadpis */
+@media (max-width: 520px){
+    .contact-heading{
+        align-items: flex-start;
+    }
+
+    .contact-inline{
+        margin-top: 6px;
+    }
+}
+
+
+/* =========================================================
+   TOAST
+   ========================================================= */
+#toast {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.toast-message {
+    background: #111;
+    color: #fff;
+    padding: 16px 22px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: toastIn 0.4s forwards, toastOut 0.4s forwards 3s;
+}
+
+@keyframes toastIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes toastOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+/* =========================================================
+   SERVICE CHOICE
+   ========================================================= */
+.service-choice {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.service-choice h2 {
+    font-size: 34px;
+    font-weight: 800;
+    margin: 0 0 50px 0;
+    color: var(--text);
+}
+
+.choice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.choice-card {
+    background: var(--card);
+    padding: 40px 35px;
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    color: var(--text);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    transition: transform .35s ease, box-shadow .35s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.choice-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+}
+
+.choice-icon {
+    font-size: 64px;
+    margin-bottom: 10px;
+}
+
+.choice-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: var(--accent);
+}
+
+.choice-card p {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 420px;
+    margin: 0 0 25px 0;
+}
+
+.choice-link {
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 16px;
+}
+
+/* =========================
+   UCTOVNICTVO – INE ZAROVNANIE
+   (ROZMERY OSTAVAJU ROVNAKE)
+   ========================= */
+
+/* header text */
+.ucto-page .page-header.ucto-header p {
+    text-align: justify;
+    text-justify: inter-word;
+    max-width: 1200px;
+}
+
+/* texty v kartach */
+.ucto-page .box-content p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.ucto-page .full-width-details{
+  margin-top: -135px;
+}
+
+/* zoznamy nech ostanu citatelne */
+.ucto-page .box-content ul {
+    text-align: left;
+}
+
+.ucto-page .two-columns{
+  margin-top: -50px;   /* namiesto 60px */
+}
+
+/* karty */
+.ucto-page .column-box {
+    align-items: flex-start !important; /* rovnako ako stavby */
+}
+
+.ucto-page .box-content h2,
+.ucto-page .box-content h3,
+.ucto-page .box-content p,
+.ucto-page .box-content ul {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* tlacidlo nech nie je centrovane */
+.ucto-page .btn-primary {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+
+.ucto-page .box-content h2,
+.ucto-page .box-content p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ucto-page .btn-primary {
+    margin-left: auto;
+    margin-right: auto; /* tlacidlo do stredu */
+    display: inline-block;
+}
+
+/* =========================================================
+   O NAS (o_nas.html) – bez cerveneho pozadia
+   - cervena iba akcent (nadpisy)
+   - hero svetly/neutralny
+   - kompaktne prve okno
+   ========================================================= */
+
+.about-hero{
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 42px 20px;
+    text-align: center;
+
+    /* ziadne cervene pozadie */
+    background: linear-gradient(180deg, #ffffff 0%, #f3f3f3 100%);
+    box-shadow: var(--shadow-sm);
+}
+
+/* zrusime overlay uplne */
+.about-hero::before{
+    content: none;
+}
+
+.about-hero-content{
+    max-width: var(--container);
+    width: 100%;
+    padding: 0 20px;
+    color: var(--text);
+}
+
+.about-hero-content h1{
+    font-size: clamp(28px, 3vw, 44px);
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    color: var(--accent); /* cervena iba na nadpis */
+}
+
+.about-hero-content p{
+    font-size: clamp(14px, 1.2vw, 18px);
+    color: var(--muted);
+    margin: 0;
+}
+
+/* hlavna sekcia */
+.about-section{
+    padding: 0 20px 55px;
+}
+
+/* karta (prve okno) */
+.about-container{
+    max-width: 980px;
+    margin: 22px auto 0;  /* uz NEGATIVNY margin, nech nie je prechod cez hero */
+    display: flex;
+    gap: 26px;
+    align-items: flex-start;
+
+    background: var(--card);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    padding: 28px;
+}
+
+/* text */
+.about-text{
+    width: 58%;
+}
+
+.about-text h2{
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--accent); /* cervena iba nadpis */
+    margin: 0 0 12px 0;
+}
+
+.about-text p{
+    font-size: 16px;
+    color: #555;
+    margin: 0 0 12px 0;
+}
+
+.about-text ul{
+    list-style: none;
+    padding: 0;
+    margin: 14px 0 0 0;
+}
+
+.about-text ul li{
+    background: #fff;
+    border-radius: 12px;
+    padding: 9px 12px;
+    margin-bottom: 10px;
+    box-shadow: var(--shadow-sm);
+    font-size: 15px;
+    color: var(--text);
+}
+
+/* obrazok */
+.about-image{
+    width: 42%;
+}
+
+.about-image img{
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    display: block;
+    background: #f1f1f1;
+}
+
+/* responzivita */
+@media (max-width: 900px){
+    .about-hero{
+        min-height: 160px;
+        padding: 36px 16px;
+    }
+
+    .about-container{
+        flex-direction: column;
+        margin: 18px auto 0;
+        padding: 22px;
+        gap: 18px;
+        max-width: 980px;
+    }
+
+    .about-text,
+    .about-image{
+        width: 100%;
+    }
+
+    .about-image img{
+        height: 240px;
+    }
 }

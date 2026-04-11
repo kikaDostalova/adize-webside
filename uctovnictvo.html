@@ -1,29 +1,121 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>Účtovníctvo | ADIZE</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Účtovníctvo | ADIZE</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+
+<body class="ucto-page">
 
 <header class="header">
-    <a href="index.html">
-        <img src="images/logo.png" class="logo" alt="ADIZE logo">
-    </a>
+  <a href="index.html">
+    <img src="images/logo.png" class="logo" alt="ADIZE logo">
+  </a>
 
-    <nav>
-        <a href="stavby.html">Stavebné práce</a>
-        <a href="uctovnictvo.html">Vedenie účtovníctva</a>
-        <a href="o_nas.html">O nás</a>
-    </nav>
+  <nav>
+    <a href="stavby.html">Stavebné práce</a>
+    <a href="uctovnictvo.html" class="active">Vedenie účtovníctva</a>
+    <a href="o_nas.html">O nás</a>
+  </nav>
 </header>
 
+<div class="page-container">
 
-<section class="page-content">
-    <h1>Účtovnícke služby</h1>
-    <p>Sem pridáme informácie o vedení účtovníctva a ponuke služieb.</p>
-</section>
+  <section class="premium-services">
 
-</body>
-</html>
+    <section class="page-header ucto-header">
+      <h2>Účtovnícke služby</h2>
+      <p>
+        Poskytujeme komplexné účtovnícke služby pre živnostníkov, malé firmy aj spoločnosti. Zabezpečujeme správne spracovanie účtovných dokladov, daňových výkazov a dodržiavanie všetkých zákonných termínov.
+        S nami máte istotu poriadku v číslach, aktuálnych informácií a profesionálneho prístupu. Sledujeme zmeny v legislatíve a postaráme sa o vaše povinnosti, aby ste sa mohli naplno venovať podnikaniu.
+        Spoľahlivé vedenie účtovníctva pre živnostníkov, malé firmy aj spoločnosti. Postaráme sa o doklady, výkazy aj termíny — vy sa venujte podnikaniu.
+      </p>
+    </section>
+
+    <section class="two-columns ucto-columns">
+
+      <div class="column-box ucto-card">
+        <div class="box-content">
+          <h2>Komplexné vedenie účtovníctva</h2>
+          <p>
+            Prevezmeme spracovanie dokladov, evidenciu a výstupy pre úradné povinnosti.
+            Získate prehľad, poriadok a istotu, že všetko sedí.
+          </p>
+
+          <h3>Čo zabezpečíme</h3>
+          <ul>
+            <li>Spracovanie účtovných dokladov a kontrola správnosti</li>
+            <li>Priebežné konzultácie a odborné odporúčania</li>
+            <li>Výstupy a prehľady pre lepší prehľad o financiách</li>
+            <li>Dodržiavanie zákonných termínov</li>
+          </ul>
+
+          <button class="btn-primary more-btn" data-target="ucto-viac">
+            Zobraziť viac
+          </button>
+        </div>
+
+        <img src="images/uctovnictvo.png" class="box-photo" alt="Účtovníctvo">
+      </div>
+
+      <div class="full-width-details">
+        <div id="ucto-viac" class="full-details-box ucto-details">
+          <h3>Rozšírené účtovnícke služby</h3>
+          <ul>
+            <li><strong>Jednoduché účtovníctvo</strong> – pre živnostníkov a menšie podnikanie</li>
+            <li><strong>Podvojné účtovníctvo</strong> – pre s.r.o. a komplexnejšie agendy</li>
+            <li><strong>Daňové priznania</strong> – spracovanie a podanie podľa dohody</li>
+            <li><strong>Agenda DPH</strong> – kontrola dokladov a podklady k priznaniam</li>
+            <li><strong>Ročné uzávierky</strong> – sumarizácia, kontrola a výstupy</li>
+            <li><strong>Komunikácia s úradmi</strong> – podľa splnomocnenia</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="contact-section" id="kontakt">
+       <h2 class="contact-heading">
+            Kontaktujte nás
+            <span class="contact-inline">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm5 19a1.25 1.25 0 1 0 0-2.5A1.25 1.25 0 0 0 12 21zm-4-4h8V5H8v12z"/>
+        </svg>
+        <a href="tel:+421907832314">+421 907 832 314</a>
+    </span>
+        </h2>
+
+      <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="b3f33c4d-d40a-4a54-8ad8-e8cb8111f5d1">
+        <input type="hidden" name="to_email" value="dostalovak265@gmail.com">
+        <input type="hidden" name="subject" value="Nová správa z webu ADIZE – Účtovníctvo">
+        <input type="hidden" name="from_name" value="ADIZE – Účtovníctvo">
+
+        <div class="form-group">
+          <label for="name">Meno (nepovinné)</label>
+          <input type="text" id="name" name="name" placeholder="Vaše meno">
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail *</label>
+          <input type="email" id="email" name="email" placeholder="vas@email.sk" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Správa *</label>
+          <textarea id="message" name="message" rows="5"
+            placeholder="Napíšte nám, s čím vám môžeme pomôcť (živnosť / s.r.o., DPH, počet dokladov...)" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary contact-submit">
+          Odoslať správu
+        </button>
+      </form>
+    </section>
+
+  </section>
+</div>
+
+<div id="toast"></div>
