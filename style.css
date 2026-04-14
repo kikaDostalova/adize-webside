@@ -42,6 +42,11 @@ section {
     margin-bottom: 70px;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
+
 .page-container {
     max-width: var(--container);
     margin: 0 auto;
@@ -70,6 +75,12 @@ section {
 
 .logo:hover {
     transform: scale(1.03);
+}
+
+.header nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .header nav a {
@@ -119,6 +130,7 @@ section {
     margin: 0 0 15px 0;
     font-weight: 800;
     color: #fdfdfd;
+    line-height: 1.12;
 }
 
 .hero p {
@@ -139,6 +151,8 @@ section {
     border-radius: var(--radius-sm);
     text-decoration: none;
     transition: 0.3s;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-primary:hover {
@@ -323,9 +337,7 @@ section {
 }
 
 /* =========================================================
-   TWO COLUMNS / BOXES (FINAL SINGLE SOURCE OF TRUTH)
-   - v tvojom povodnom css bolo .column-box duplicitne (grid aj flex)
-   - tu je final: FLEX + stabilne rozmery pre obe stranky
+   TWO COLUMNS / BOXES
    ========================================================= */
 .two-columns {
     display: grid;
@@ -338,10 +350,9 @@ section {
     display: flex;
     gap: 40px;
     margin-top: 40px;
-    align-items: flex-start;
+    align-items: stretch;
     position: relative;
     z-index: 2;
-
     padding: 30px;
     border-radius: var(--radius-lg);
     background: var(--card);
@@ -349,24 +360,42 @@ section {
 }
 
 .box-content {
-    width: 55%;
+    width: 60%;
 }
 
 .box-content h2 {
     color: var(--accent);
     font-size: 28px;
     margin: 0 0 10px 0;
+    line-height: 1.2;
+}
+
+.box-content h3 {
+    font-size: 22px;
+    margin: 18px 0 10px 0;
+    line-height: 1.25;
 }
 
 .box-content p {
     font-size: 17px;
     color: #555;
-    margin: 0 0 20px 0;
+    margin: 0 0 18px 0;
+}
+
+.box-content ul {
+    margin: 8px 0 0 0;
+    padding-left: 20px;
+}
+
+.box-content li {
+    margin-bottom: 8px;
+    line-height: 1.5;
 }
 
 .box-photo {
-    width: 45%;
-    height: 350px;
+    width: 40%;
+    height: auto;
+    min-height: 350px;
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
@@ -374,8 +403,10 @@ section {
 
 /* special photo sizing you used */
 .box-photo-okna {
-    width: 45%;
-    height: 620px;
+    width: 40%;
+    height: auto;
+    min-height: 420px;
+    object-fit: cover;
 }
 
 /* hidden details (inside box) */
@@ -402,6 +433,7 @@ section {
 .details-box ul li {
     margin-bottom: 8px;
     font-size: 15px;
+    line-height: 1.55;
 }
 
 /* full width details card */
@@ -417,10 +449,8 @@ section {
     background: var(--card);
     padding: 35px;
     margin-top: 1px;
-
     border-radius: 18px;
     box-shadow: var(--shadow-lg);
-
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -433,7 +463,7 @@ section {
     width: 100%;
 }
 
-/* positioning helpers (kept as you had) */
+/* positioning helpers */
 .higher-box {
     position: relative;
     z-index: 0;
@@ -478,31 +508,6 @@ section {
     top: 50px;
 }
 
-/* responsive for boxes */
-@media (max-width: 900px) {
-    .column-box {
-        flex-direction: column;
-    }
-
-    .box-content,
-    .box-photo,
-    .box-photo-okna {
-        width: 100%;
-    }
-
-    .box-photo {
-        height: 260px;
-    }
-
-    .box-photo-okna {
-        height: 320px;
-    }
-
-    .masonry {
-        column-count: 1;
-    }
-}
-
 /* =========================================================
    CONTACT SECTION
    ========================================================= */
@@ -532,6 +537,7 @@ section {
 }
 
 /* form */
+#contactForm,
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -557,6 +563,7 @@ section {
     border-radius: 10px;
     outline: none;
     transition: 0.3s;
+    font-family: inherit;
 }
 
 .form-group input:focus,
@@ -572,50 +579,37 @@ section {
 }
 
 /* =========================================================
-   CONTACT HEADING – telefon vedla nadpisu
+   CONTACT HEADING
    ========================================================= */
-
-.contact-heading{
+.contact-heading {
     display: flex;
     align-items: center;
     gap: 18px;
     flex-wrap: wrap;
 }
 
-.contact-inline{
+.contact-inline {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     padding: 6px 12px;
     border-radius: 999px;
-    background: rgba(224,0,0,0.08);
+    background: rgba(224, 0, 0, 0.08);
 }
 
-.contact-inline svg{
+.contact-inline svg {
     width: 18px;
     height: 18px;
     fill: var(--accent);
 }
 
-.contact-inline a{
+.contact-inline a {
     text-decoration: none;
     font-size: 16px;
     font-weight: 700;
     color: var(--accent);
     white-space: nowrap;
 }
-
-/* mobil – nech ide pod nadpis */
-@media (max-width: 520px){
-    .contact-heading{
-        align-items: flex-start;
-    }
-
-    .contact-inline{
-        margin-top: 6px;
-    }
-}
-
 
 /* =========================================================
    TOAST
@@ -729,40 +723,34 @@ section {
     font-size: 16px;
 }
 
-/* =========================
-   UCTOVNICTVO – INE ZAROVNANIE
-   (ROZMERY OSTAVAJU ROVNAKE)
-   ========================= */
-
-/* header text */
+/* =========================================================
+   UCTOVNICTVO
+   ========================================================= */
 .ucto-page .page-header.ucto-header p {
     text-align: justify;
     text-justify: inter-word;
     max-width: 1200px;
 }
 
-/* texty v kartach */
 .ucto-page .box-content p {
     text-align: justify;
     text-justify: inter-word;
 }
 
-.ucto-page .full-width-details{
-  margin-top: -135px;
+.ucto-page .full-width-details {
+    margin-top: -135px;
 }
 
-/* zoznamy nech ostanu citatelne */
 .ucto-page .box-content ul {
     text-align: left;
 }
 
-.ucto-page .two-columns{
-  margin-top: -50px;   /* namiesto 60px */
+.ucto-page .two-columns {
+    margin-top: -50px;
 }
 
-/* karty */
 .ucto-page .column-box {
-    align-items: flex-start !important; /* rovnako ako stavby */
+    align-items: flex-start !important;
 }
 
 .ucto-page .box-content h2,
@@ -773,12 +761,10 @@ section {
     margin-right: 0 !important;
 }
 
-/* tlacidlo nech nie je centrovane */
 .ucto-page .btn-primary {
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
-
 
 .ucto-page .box-content h2,
 .ucto-page .box-content p {
@@ -788,99 +774,88 @@ section {
 
 .ucto-page .btn-primary {
     margin-left: auto;
-    margin-right: auto; /* tlacidlo do stredu */
+    margin-right: auto;
     display: inline-block;
 }
 
 /* =========================================================
-   O NAS (o_nas.html) – bez cerveneho pozadia
-   - cervena iba akcent (nadpisy)
-   - hero svetly/neutralny
-   - kompaktne prve okno
+   O NAS
    ========================================================= */
-
-.about-hero{
+.about-hero {
     min-height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 42px 20px;
     text-align: center;
-
-    /* ziadne cervene pozadie */
     background: linear-gradient(180deg, #ffffff 0%, #f3f3f3 100%);
     box-shadow: var(--shadow-sm);
 }
 
-/* zrusime overlay uplne */
-.about-hero::before{
+.about-hero::before {
     content: none;
 }
 
-.about-hero-content{
+.about-hero-content {
     max-width: var(--container);
     width: 100%;
     padding: 0 20px;
     color: var(--text);
 }
 
-.about-hero-content h1{
+.about-hero-content h1 {
     font-size: clamp(28px, 3vw, 44px);
     font-weight: 800;
     margin: 0 0 8px 0;
-    color: var(--accent); /* cervena iba na nadpis */
+    color: var(--accent);
 }
 
-.about-hero-content p{
+.about-hero-content p {
     font-size: clamp(14px, 1.2vw, 18px);
     color: var(--muted);
     margin: 0;
 }
 
-/* hlavna sekcia */
-.about-section{
+.about-section {
     padding: 0 20px 55px;
 }
 
-/* karta (prve okno) */
-.about-container{
+.about-container {
     max-width: 980px;
-    margin: 22px auto 0;  /* uz NEGATIVNY margin, nech nie je prechod cez hero */
+    margin: 22px auto 0;
     display: flex;
     gap: 26px;
     align-items: flex-start;
-
     background: var(--card);
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-lg);
     padding: 28px;
 }
 
-/* text */
-.about-text{
+.about-text {
     width: 58%;
 }
 
-.about-text h2{
+.about-text h2 {
     font-size: 26px;
     font-weight: 800;
-    color: var(--accent); /* cervena iba nadpis */
+    color: var(--accent);
     margin: 0 0 12px 0;
 }
 
-.about-text p{
+.about-text p {
     font-size: 16px;
     color: #555;
     margin: 0 0 12px 0;
 }
 
-.about-text ul{
+.about-text ul {
     list-style: none;
     padding: 0;
     margin: 14px 0 0 0;
 }
 
-.about-text ul li{
+.about-text ul li {
     background: #fff;
     border-radius: 12px;
     padding: 9px 12px;
@@ -890,29 +865,90 @@ section {
     color: var(--text);
 }
 
-/* obrazok */
-.about-image{
+.about-image {
     width: 42%;
 }
 
-.about-image img{
+.about-image img {
     width: 100%;
     height: 320px;
     object-fit: cover;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
-    display: block;
     background: #f1f1f1;
 }
 
-/* responzivita */
-@media (max-width: 900px){
-    .about-hero{
+/* =========================================================
+   PAGE CONTENT
+   ========================================================= */
+.page-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.page-content h1 {
+    font-size: 36px;
+    margin-bottom: 16px;
+    color: var(--accent);
+}
+
+.page-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--muted);
+}
+
+.page-content ul {
+    padding-left: 20px;
+}
+
+.page-content li {
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.page-content a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.page-content a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 900px) {
+    .column-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .box-content,
+    .box-photo,
+    .box-photo-okna {
+        width: 100%;
+    }
+
+    .box-photo {
+        min-height: unset;
+        height: 260px;
+    }
+
+    .box-photo-okna {
+        min-height: unset;
+        height: 320px;
+    }
+
+    .about-hero {
         min-height: 160px;
         padding: 36px 16px;
     }
 
-    .about-container{
+    .about-container {
         flex-direction: column;
         margin: 18px auto 0;
         padding: 22px;
@@ -921,18 +957,35 @@ section {
     }
 
     .about-text,
-    .about-image{
+    .about-image {
         width: 100%;
     }
 
-    .about-image img{
+    .about-image img {
         height: 240px;
+    }
+
+    .masonry {
+        column-count: 1;
     }
 }
 
 @media (max-width: 768px) {
     .page-container {
         padding: 24px 16px;
+    }
+
+    .page-content {
+        padding: 30px 16px;
+    }
+
+    .page-content h1 {
+        font-size: 28px;
+    }
+
+    .page-content p,
+    .page-content li {
+        font-size: 16px;
     }
 
     .header {
@@ -986,7 +1039,6 @@ section {
     }
 
     .column-box {
-        flex-direction: column;
         gap: 18px;
         padding: 20px;
         margin-top: 20px;
@@ -1104,10 +1156,33 @@ section {
     }
 
     .box-zaluzie-details {
-    top: 30px;
+        top: 30px !important;
     }
 
     .box-okna-details {
-    top: 0px;
+        top: 0 !important;
+    }
+
+}
+
+@media (max-width: 520px) {
+    .contact-heading {
+        align-items: flex-start;
+    }
+
+    .contact-inline {
+        margin-top: 6px;
+    }
+
+    .logo {
+        height: 38px;
+    }
+
+    .header {
+        padding: 10px 12px;
+    }
+
+    .header nav a {
+        font-size: 13px;
     }
 }
