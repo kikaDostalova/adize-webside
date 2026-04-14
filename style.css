@@ -1074,9 +1074,7 @@ section {
         width: 100%;
         font-size: 15px;
     }
-}
 
-@media (max-width: 768px) {
     .hero {
         padding-left: 20px;
         padding-right: 20px;
@@ -1103,5 +1101,13 @@ section {
     .btn-primary {
         padding: 12px 22px;
         font-size: 14px;
+    }
+
+    .box-zaluzie-details {
+    top: 30px;
+    }
+
+    .box-okna-details {
+    top: 0px;
     }
 }
