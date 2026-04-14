@@ -1155,14 +1155,19 @@ img {
         font-size: 14px;
     }
 
+    .box-okna-details,
+    .box-zaluzie-details {
+        margin-top: 0 !important;
+        top: 0 !important;
+    }
+
     .box-zaluzie-details {
         top: 30px !important;
     }
 
     .box-okna-details {
-        top: -20px !important;
+        top: 0 !important;
     }
-
 }
 
 @media (max-width: 520px) {
