@@ -929,3 +929,149 @@ section {
         height: 240px;
     }
 }
+
+@media (max-width: 768px) {
+    .page-container {
+        padding: 24px 16px;
+    }
+
+    .header {
+        padding: 12px 16px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .logo {
+        height: 44px;
+        flex-shrink: 0;
+    }
+
+    .header nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 8px 14px;
+    }
+
+    .header nav a {
+        margin-left: 0;
+        font-size: 14px;
+    }
+
+    .premium-services {
+        padding: 10px 0;
+        margin-top: 0;
+    }
+
+    .premium-services h2 {
+        font-size: 24px;
+        line-height: 1.25;
+    }
+
+    .premium-services .lead-text,
+    .premium-services p,
+    .ucto-page .page-header.ucto-header p,
+    .ucto-page .box-content p {
+        text-align: left;
+        text-justify: auto;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .two-columns {
+        gap: 24px;
+        margin-top: 30px;
+    }
+
+    .column-box {
+        flex-direction: column;
+        gap: 18px;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .box-content {
+        width: 100%;
+    }
+
+    .box-photo,
+    .box-photo-okna {
+        width: 100%;
+        height: auto;
+        max-height: 340px;
+        object-fit: cover;
+    }
+
+    .box-content h2 {
+        font-size: 24px;
+        line-height: 1.25;
+    }
+
+    .box-content h3 {
+        font-size: 20px;
+    }
+
+    .box-content p,
+    .box-content li {
+        font-size: 16px;
+    }
+
+    .details-box ul li {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .contact-section {
+        margin: 50px auto 0;
+        padding: 22px 18px;
+    }
+
+    .contact-section h2 {
+        font-size: 24px;
+    }
+
+    .contact-inline a {
+        font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px;
+    }
+
+    .contact-submit {
+        width: 100%;
+        text-align: center;
+    }
+
+    .gallery-section {
+        margin-top: 60px;
+        padding: 20px 0;
+    }
+
+    .gallery-section h2 {
+        font-size: 24px;
+    }
+
+    .masonry {
+        column-count: 1;
+        column-gap: 0;
+    }
+
+    .masonry img {
+        margin-bottom: 16px;
+    }
+
+    #toast {
+        right: 16px;
+        left: 16px;
+        bottom: 16px;
+    }
+
+    .toast-message {
+        width: 100%;
+        font-size: 15px;
+    }
+}
